@@ -38,19 +38,25 @@ const AboutSection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-orange-400 to-yellow-400
-                   text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-comforter
-                   drop-shadow-[0_8px_18px_rgba(0,0,0,0.55)]">
+          <span className="bg-clip-text text-white text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-comforter">
             ABOUT
           </span>
         </motion.h2>
 
         <motion.div
-          className="w-[90%] md:w-[70%] lg:w-[60%] bg-white/15 backdrop-blur-lg rounded-2xl shadow-2xl border border-amber-300 p-10 text-center"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
+  className="
+    w-[90%] md:w-[70%] lg:w-[60%]
+    bg-[rgba(155,190,255)] backdrop-blur-2xl
+    border border-[rgba(255,255,255,0.25)]
+    rounded-3xl
+    p-10
+    text-center
+  "
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8, ease: 'easeOut' }}
+>
+
           <p className="text-base md:text-xl text-white font-medium m-5 p-2 leading-relaxed">
             Sankranti, celebrated across India with unique regional traditions, is one of the
             oldest festivals rooted deeply in the agricultural heritage of the country. It
@@ -76,9 +82,8 @@ const AboutSection: React.FC = () => {
       </section>
       <section className="relative flex flex-col items-center justify-center min-h-screen pb-10 overflow-hidden z-30">
         <motion.h2
-          className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-orange-400 to-yellow-400
-                   text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-comforter
-                   drop-shadow-[0_8px_18px_rgba(0,0,0,0.55)] mt-10"
+          className="bg-clip-text text-white
+                   text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-comforter mt-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
