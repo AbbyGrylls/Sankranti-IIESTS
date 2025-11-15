@@ -243,17 +243,19 @@ const typedText = useFadeText(titleWords[currentWordIndex]);
                 </p>
               </div>
 
-              <motion.span
-                className="absolute top-3 right-3 text-yellow-500"
-                animate={{ scale: [1, 1.3, 1] }}
-                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-              >
-                ✨
-              </motion.span>
-            </motion.div>
-          ))}
-        </div>
-      </motion.section>
-    </main>
+                <motion.span
+                  className="absolute top-3 right-3 text-yellow-500"
+                  animate={{ scale: [1, 1.3, 1] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                >
+                  ✨
+                </motion.span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+      </main>
+    </div>
+    </>
   );
 }
