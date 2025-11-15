@@ -254,6 +254,6 @@ export default function SankrantiPage() {
         </motion.section>
       </main>
     </div>
-    </>
+  
   );
 }
