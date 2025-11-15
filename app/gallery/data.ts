@@ -1,0 +1,103 @@
+export const photoGroups = [
+  {
+    year: "January 15 2025",
+    photos: [
+        "https://images.pexels.com/photos/236047/pexels-photo-236047.jpeg?cs=srgb&dl=clouds-cloudy-countryside-236047.jpg&fm=jpg",
+        "https://images.pexels.com/photos/247478/pexels-photo-247478.jpeg?cs=srgb&dl=clouds-cloudy-conifers-247478.jpg&fm=jpg",
+        "https://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-13.jpg",
+        "https://www.pixelstalk.net/wp-content/uploads/2016/08/Nature-beautiful-desktop-images-cool.jpg",
+        "https://www.pixelstalk.net/wp-content/uploads/2016/07/3840x2160-Images-Free-Download.jpg",
+      ],
+    sections: {
+        Sankranthi: [
+          "/galleryphotos/2025/sankranthi/DSC_0240.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0364.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0416.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0224.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0228.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0407.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0409.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0417.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0418.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0419.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0420.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0421.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0425.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0419.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0409.jpg",
+        ],
+        Bhogi: [
+          "/galleryphotos/2025/bhogi/DSC_0161.jpg",
+          "/galleryphotos/2025/bhogi/DSC_0242.jpg",
+          "/galleryphotos/2025/bhogi/DSC_0267.jpg",
+          "/galleryphotos/2025/bhogi/DSC_0050.jpg",
+          "/galleryphotos/2025/bhogi/DSC_0017.jpg",
+          "/galleryphotos/2025/bhogi/DSC_0059.jpg",
+          "/galleryphotos/2025/bhogi/DSC_0246.jpg",
+          "/galleryphotos/2025/bhogi/DSC_0247.jpg",
+          "/galleryphotos/2025/bhogi/DSC_0250.jpg",
+          "/galleryphotos/2025/bhogi/DSC_0253.jpg",
+          "/galleryphotos/2025/bhogi/DSC_0259.jpg",
+          "/galleryphotos/2025/bhogi/DSC_0261.jpg",
+          "/galleryphotos/2025/bhogi/DSC_0261.jpg",
+          // "/galleryphotos/2025/bhogi/IMG_2890.HEIC",
+          // "/galleryphotos/2025/bhogi/IMG_2892.HEIC",
+          // "/galleryphotos/2025/bhogi/IMG_2895.HEIC",
+        ],
+        Food: ["https://images.pexels.com/photos/316466/pexels-photo-316466.jpeg"],
+        Dance: ["https://images.pexels.com/photos/2080965/pexels-photo-2080965.jpeg"],
+      },
+  },
+  {
+    year: "January 14 2024",
+    photos: [
+        "https://images.pexels.com/photos/247478/pexels-photo-247478.jpeg?cs=srgb&dl=clouds-cloudy-conifers-247478.jpg&fm=jpg",
+        "https://www.pixelstalk.net/wp-content/uploads/2016/08/Nature-beautiful-desktop-images-cool.jpg",
+        "https://images.pexels.com/photos/236047/pexels-photo-236047.jpeg?cs=srgb&dl=clouds-cloudy-countryside-236047.jpg&fm=jpg",
+        "https://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-13.jpg",
+        "https://www.pixelstalk.net/wp-content/uploads/2016/07/3840x2160-Images-Free-Download.jpg",
+      ],
+    sections: {
+        Sankranthi: [
+          "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg",
+          "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg",
+        ],
+        Bhogi: [
+          "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg",
+          "https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg",
+        ],
+        Food: ["https://images.pexels.com/photos/316466/pexels-photo-316466.jpeg"],
+        Dance: ["https://images.pexels.com/photos/2080965/pexels-photo-2080965.jpeg"],
+      }
+  },
+  {
+    year: "January 10 2023",
+    photos: [
+        "https://images.pexels.com/photos/236047/pexels-photo-236047.jpeg?cs=srgb&dl=clouds-cloudy-countryside-236047.jpg&fm=jpg",
+        "https://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-13.jpg",
+        "https://images.pexels.com/photos/247478/pexels-photo-247478.jpeg?cs=srgb&dl=clouds-cloudy-conifers-247478.jpg&fm=jpg",
+        "https://www.pixelstalk.net/wp-content/uploads/2016/08/Nature-beautiful-desktop-images-cool.jpg",
+        "https://www.pixelstalk.net/wp-content/uploads/2016/07/3840x2160-Images-Free-Download.jpg",
+      ],
+    sections: {
+        Sankranthi: [
+          "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg",
+          "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg",
+          "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg",
+          "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg",
+          "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg",
+          "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg",
+          "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg",
+          "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg",
+        ],
+        Bhogi: [
+          "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg",
+          "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg",
+          "https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg",
+          "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg",
+        ],
+        Food: ["https://images.pexels.com/photos/316466/pexels-photo-316466.jpeg"],
+        Dance: ["https://images.pexels.com/photos/2080965/pexels-photo-2080965.jpeg"],
+      }
+  },
+];
