@@ -255,10 +255,5 @@ const typedText = useFadeText(titleWords[currentWordIndex]);
           </div>
         </motion.section>
       </main>
-<<<<<<< HEAD
-    </div>
-  
-=======
->>>>>>> db150577df7cd6b0bc2930ea44b0e4c096b58335
   );
 }
