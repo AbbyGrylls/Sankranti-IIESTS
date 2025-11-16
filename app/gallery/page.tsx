@@ -19,19 +19,7 @@ interface PhotoGroup {
   photos: string[];
   sections: PhotoSections;
 }
-<style jsx global>{`
-  @keyframes sankrantiFlow {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-`}</style>
+
 
 // --- Component ---
 const App: React.FC = () => {
@@ -47,32 +35,19 @@ const App: React.FC = () => {
           "/galleryphotos/2025/sankranthi/DSC_0224.jpg",
           "/galleryphotos/2025/sankranthi/DSC_0224.jpg",
           "/galleryphotos/2025/sankranthi/DSC_0224.jpg",
-        // "https://images.pexels.com/photos/236047/pexels-/photo-236047.jpeg?cs=srgb&dl=clouds-cloudy-countryside-236047.jpg&fm=jpg",
-        // "https://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-13.jpg",
-        // "https://www.pixelstalk.net/wp-content/uploads/2016/08/Nature-beautiful-desktop-images-cool.jpg",
-        // "https://www.pixelstalk.net/wp-content/uploads/2016/07/3840x2160-Images-Free-Download.jpg",
       ],
-      sections: {
-        
-      },
+      sections: {},
     },
     {
       year: "2024",
       photos: [
-        "/galleryphotos/2025/bhogi/DSC_0050.jpg",
+        "/galleryphotos/2024/bhogi/IMG_5813.jpg",
+        "/galleryphotos/2024/sankranthi/DSC_0002.jpg",
           "/galleryphotos/2025/sankranthi/DSC_0228.jpg",
           "/galleryphotos/2025/sankranthi/DSC_0228.jpg",
           "/galleryphotos/2025/sankranthi/DSC_0228.jpg",
-          "/galleryphotos/2025/sankranthi/DSC_0228.jpg",
-        // "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?cs=srgb&dl=forest-trees-nature-green-1761279.jpg&fm=jpg",
-        // "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?cs=srgb&dl=sea-ocean-sunset-3225517.jpg&fm=jpg",
-        // "https://wallpapershome.com/images/pages/pic_h/14367.jpg",
-        // "https://www.pixelstalk.net/wp-content/uploads/2016/07/Be/autiful-Images-HD-Free-Download.jpg",
-        // "https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Images-Free-Download-Beautiful.jpg",
       ],
-      sections: {
-        
-      },
+      sections: {},
     },
     {
       year: "2023",
@@ -83,58 +58,28 @@ const App: React.FC = () => {
           "/galleryphotos/2025/sankranthi/DSC_0419.jpg",
           "/galleryphotos/2025/sankranthi/DSC_0419.jpg",
           "/galleryphotos/2025/sankranthi/DSC_0419.jpg",
-        // "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?cs=srgb&dl=mountain-top-view-3408744.jpg&fm=jpg",
-        // "https://wallpapershome.com/images/pages/pic_h/21969.jpg",
-        // "https://images.pexels.com/photos/2080965/pexels-photo-2080965.jpeg?cs=srgb&dl=forest-lake-reflection-2080965.jpg&fm=jpg",
-        // "https://images.pexels.com/photos/316466/pexels-photo-316466.jpeg?cs=srgb&dl=beautiful-landscape-mountains-nature-316466.jpg&fm=jpg",
-        // "https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?cs=srgb&dl=sunset-sky-clouds-912110.jpg&fm=jpg",
       ],
-      sections: {
-        
-      },
+      sections: {},
     },
   ];
 
   return (
-    /* <main
-  className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-20"
-  style={{
-    background:
-      "linear-gradient(135deg, #03071E, #370617, #6A040F, #9D0208, #D00000, #DC2F02, #E85D04, #F48C06, #FAA307, #FFBA08)",
-    backgroundSize: "100% 100%",
-    animation: "sankrantiFlow 18s ease infinite",
-  }} >*/
    <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-20">
 
-  {/* VIDEO BACKGROUND */}
-<video
-  ref={(el) => {
-    if (el) el.playbackRate = 0.75;   // <<< slow motion
-  }}
-  preload="auto"
-  src="/galleryphotos/videoback2.mp4"
-  autoPlay
-  loop
-  muted
-  playsInline
-  className="absolute top-0 left-0 w-full h-full object-cover z-[-2]"
-/>
+      <video
+        ref={(el) => {
+          if (el) el.playbackRate = 0.75;   // <<< slow motion
+        }}
+        preload="auto"
+        src="/galleryphotos/videoback2.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-2]"
+      />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-[0px] z-[-1]" />
 
-
-  {/* DARK OVERLAY */}
-  <div
-    className="
-      absolute inset-0 
-      bg-black/70    
-      backdrop-blur-[0px]
-      z-[-1]
-    "
-  />
-
-
-
-      {/* Rotating Kolam */}
-      
       {/* Heading */}
       <div className="text-center mb-20 z-10 pt-6">
         <h1
@@ -159,11 +104,11 @@ const App: React.FC = () => {
 
       {/* === Timeline Section === */}
       <div className="relative w-full max-w-8xl z-10">
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-white/40"></div>
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-white/40 hidden md:block"></div>
 {photoGroups.map((group, index) => (
   <div
     key={index}
-    className="relative flex flex-col md:flex-row items-center justify-between mb-32"
+    className="relative flex flex-col md:flex-row items-center justify-between mb-48 md:mb-32 w-full"
   >
     {/* CENTER TIMELINE LINE */}
     <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[3px] bg-white/40"></div>
@@ -178,7 +123,7 @@ const App: React.FC = () => {
   <motion.div
     // onClick={() => setSelectedYear(group)}
     onClick={() => router.push(`/gallery/${encodeURIComponent(group.year)}/Bhogi`)}
-    className="relative w-[250px] h-[150px]  sm:w-[400px] sm:h-[260px] md:w-[460px] md:h-[300px] group cursor-pointer"
+    className="relative w-[300px] h-[190px]  sm:w-[400px] sm:h-[260px] md:w-[460px] md:h-[300px] group cursor-pointer"
 
     initial="initial"
     whileHover="hover"
@@ -251,32 +196,7 @@ const App: React.FC = () => {
 
 
 
-    {/* DOT + DATE (center) */}
-   {/* CENTER: Dot + Date */}
-{/* <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center z-30"> */}
-{/* <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center z-30 my-4 md:my-0"> */}
 
-  
-  {/* Dot */}
-  {/* <div className="group relative flex items-center justify-center w-8 h-8  */}
-                  {/* rounded-full bg-white shadow-lg cursor-pointer"> */}
-
-    {/* <div className="w-4 h-4 rounded-full bg-[#FFBA08] animate-ping absolute"></div> */}
-    {/* <div className="w-4 h-4 rounded-full bg-[#DC2F02] z-10"></div> */}
-
-    {/* Hover Date Tooltip */}
-    {/* <div */}
-      {/* // className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0  */}
-                 {/* group-hover:opacity-100 transition-all duration-300  */}
-                 {/* text-white text-xs font-semibold bg-black/50 px-3 py-1  */}
-                 {/* rounded-lg border border-white/20 whitespace-nowrap" */}
-    {/* > */}
-      {/* {group.year} */}
-    {/* </div> */}
-  {/* </div> */}
-
-{/* </div> */}
-{/* CENTER DATE — replaces dot */}
 <div
   className="
     absolute left-1/2 -translate-x-1/2
@@ -292,9 +212,9 @@ const App: React.FC = () => {
 </div>
 
 {/* MOBILE DATE — shown above both stacks */}
-<div className="md:hidden w-full flex justify-center mb-4 mt-4 backdrop-blur-[15px] p-0.5">
-  <span className="text-white text-base font-semibold bg-black/40 px-4 py-2 rounded-lg border border-white/20">
-    {group.year}
+<div className="md:hidden flex justify-center mb-6 mt-6 backdrop-blur-[15px] p-0.5">
+  <span className="text-white text-2xl font-semibold bg-black/40 px-12 py-2 rounded-lg border border-white/20">
+    {"\" "+group.year+ " \""}
   </span>
 </div>
 
@@ -312,7 +232,7 @@ const App: React.FC = () => {
 
     // className="relative w-[360px] h-[220px] group cursor-pointer"
     // className="relative w-[250px] h-[150px] sm:w-[300px] sm:h-[180px] md:w-[460px] md:h-[300px] group cursor-pointer"
-    className="relative w-[250px] h-[150px]  sm:w-[400px] sm:h-[260px] md:w-[460px] md:h-[300px] group cursor-pointer"
+    className="relative w-[300px] h-[190px]  sm:w-[400px] sm:h-[260px] md:w-[460px] md:h-[300px] group cursor-pointer"
 
 
     initial="initial"
