@@ -28,7 +28,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/LOGO.svg" type="image/svg+xml" />
       </head>
-      <body >
+      <body>
         <Navbar />
         {children}
       </body>

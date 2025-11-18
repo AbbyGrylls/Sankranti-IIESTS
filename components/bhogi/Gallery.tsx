@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef, useCallback } from "react";
-import { useRouter } from "next/navigation"; // <-- Import useRouter
+import { useRouter } from "next/navigation";
 
-// Original images
 const images = [
   "/bhogi/img1.jpg",
   "/bhogi/img2.jpg",
@@ -14,25 +13,20 @@ const images = [
   "/bhogi/img6.jpg",
 ];
 
-// Triple the array for a seamless, infinite loop
 const filmReelImages = [...images, ...images, ...images];
 
 export function Gallery() {
   const reelRef = useRef<HTMLDivElement>(null);
-  const router = useRouter(); // <-- Initialize router
+  const router = useRouter();
 
-  // --- Refs for state used in animation loops ---
-  const isHoveredRef = useRef(false);
   const isDraggingRef = useRef(false);
   const startXRef = useRef(0);
   const scrollLeftStartRef = useRef(0);
   const initializedRef = useRef(false);
-  const isClickRef = useRef(true); // <-- Ref to track if it's a click
+  const isClickRef = useRef(true);
 
-  // --- State for re-rendering (e.g., cursor style) ---
   const [isDragging, setIsDragging] = useState(false);
 
-  // --- Centralized Loop/Teleport Logic ---
   const checkLoop = useCallback(() => {
     const reel = reelRef.current;
     if (!reel) return;
@@ -52,7 +46,6 @@ export function Gallery() {
     }
   }, []);
 
-  // --- Auto-scroll + Initialization Effect ---
   useEffect(() => {
     const reel = reelRef.current;
     if (!reel) return;
@@ -66,10 +59,11 @@ export function Gallery() {
     let animationFrameId: number;
 
     const autoScroll = () => {
-      if (!isHoveredRef.current && !isDraggingRef.current && reel) {
-        reel.scrollLeft += 0.5; // Auto-scroll speed
+      // Auto-scroll ALWAYS runs unless dragging
+      if (!isDraggingRef.current && reel) {
+        reel.scrollLeft += 0.5;
       }
-      checkLoop(); // Check loop boundaries on every frame
+      checkLoop();
       animationFrameId = requestAnimationFrame(autoScroll);
     };
 
@@ -78,23 +72,25 @@ export function Gallery() {
     return () => cancelAnimationFrame(animationFrameId);
   }, [checkLoop]);
 
-  // --- Mouse/Pointer Event Handlers for Dragging ---
-
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     const reel = reelRef.current;
     if (!reel) return;
-    isDraggingRef.current = true; // User is pressing down
-    isClickRef.current = true; // Assume it's a click until proven otherwise
+
+    isDraggingRef.current = true;
+    isClickRef.current = true;
     setIsDragging(true);
-    startXRef.current = e.pageX; // Store initial pageX
+
+    startXRef.current = e.pageX;
     scrollLeftStartRef.current = reel.scrollLeft;
+
     reel.style.cursor = "grabbing";
   };
 
   const handlePointerLeave = () => {
-    isHoveredRef.current = false;
+    // Stop dragging only
     isDraggingRef.current = false;
     setIsDragging(false);
+
     if (reelRef.current) {
       reelRef.current.style.cursor = "grab";
     }
@@ -103,11 +99,29 @@ export function Gallery() {
   const handlePointerUp = () => {
     isDraggingRef.current = false;
     setIsDragging(false);
+
     if (reelRef.current) {
       reelRef.current.style.cursor = "grab";
     }
 
-    // --- NEW: Click to navigate logic ---
+    // MOBILE FIX — resume auto scroll after momentum scroll ends
+    const reel = reelRef.current;
+    if (reel) {
+      let last = reel.scrollLeft;
+      const checkStop = () => {
+        if (!reel) return;
+
+        const current = reel.scrollLeft;
+        if (Math.abs(current - last) < 1) {
+          // do nothing — auto scroll already active
+        } else {
+          last = current;
+          requestAnimationFrame(checkStop);
+        }
+      };
+      requestAnimationFrame(checkStop);
+    }
+
     if (isClickRef.current) {
       router.push("/gallery");
     }
@@ -119,19 +133,16 @@ export function Gallery() {
 
     const reel = reelRef.current;
     const x = e.pageX;
-    const walk = x - startXRef.current; // Calculate distance moved
+    const walk = x - startXRef.current;
 
-    // --- NEW: Differentiate drag vs. click ---
-    // If user moves more than 10px, it's a drag, not a click
     if (Math.abs(walk) > 10 && isClickRef.current) {
       isClickRef.current = false;
     }
 
-    reel.scrollLeft = scrollLeftStartRef.current - walk * 2; // Drag speed multiplier
-    checkLoop(); // Check loop while dragging
+    reel.scrollLeft = scrollLeftStartRef.current - walk * 2;
+    checkLoop();
   };
 
-  // --- Trackpad/Wheel Event Handler ---
   const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
     const reel = reelRef.current;
     if (!reel) return;
@@ -147,11 +158,7 @@ export function Gallery() {
         Gallery
       </h2>
 
-      <div
-        className="relative w-full"
-        onMouseEnter={() => (isHoveredRef.current = true)}
-        onMouseLeave={handlePointerLeave}
-      >
+      <div className="relative w-full">
         <div
           ref={reelRef}
           className={`w-full h-64 md:h-80 overflow-x-hidden
@@ -159,6 +166,7 @@ export function Gallery() {
                        ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}
+          onPointerLeave={handlePointerLeave}
           onPointerMove={handlePointerMove}
           onWheel={handleWheel}
         >

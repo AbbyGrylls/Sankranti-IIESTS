@@ -1,39 +1,18 @@
-"use client";
-import { useState } from "react";
-import HeroSection from "@/components/teams/HeroSection";
-import TabsSection from "@/components/teams/TabsSection";
-import TeamGrid from "@/components/teams/TeamGrid";
-import { sections, members } from "@/public/teams/data/data";
+import { TeamLayout } from "@/components/teams/TeamLayout";
+import { members, categories } from "@/public/teams/data/data";
 
-export default function TeamsPage() {
-  const [activeSection, setActiveSection] = useState("Finance");
-
-  
-  const filteredMembers = members.filter(
-    (m) => m.section === activeSection
-  );
-
+export default function TeamPage() {
   return (
-    <div
-      className="
-        min-h-screen 
-        bg-black text-white 
-        relative overflow-hidden
-      "
-    >
-      {/* Glowing accent background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.08),transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(6,182,212,0.1),transparent_60%)]" />
+    <div className="w-full min-h-screen bg-black text-white p-4 py-24">
+      <div
+        className="w-full max-w-7xl mx-auto px-4 md:px-12 py-16
+                      bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10"
+      >
+        <h1 className="text-4xl md:text-5xl text-center mb-12">
+          Meet our <span className="font-bold">team.</span>
+        </h1>
 
-      <div className="relative z-10 p-8 space-y-16">
-        <HeroSection />
-        <TabsSection
-         
-          sections={sections.filter((s) => s !== "All")}
-          activeSection={activeSection}
-          onChange={setActiveSection}
-        />
-        <TeamGrid members={filteredMembers} />
+        <TeamLayout members={members} categories={categories} />
       </div>
     </div>
   );
