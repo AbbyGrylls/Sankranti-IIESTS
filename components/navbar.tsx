@@ -27,15 +27,9 @@ export default function Navbar() {
         "
       >
         <Link href="/" className="flex items-center gap-3" onClick={closeMenu}>
-          <Image
-            src="/LOGO.svg"
-            alt="Logo"
-            width={45}
-            height={45}
-            priority
-          />
+          <Image src="/LOGO.svg" alt="Logo" width={45} height={45} priority />
           <span className="text-white font-semibold text-lg">
-            Sankranthi-IIESTS
+            Sankranti-IIESTS
           </span>
         </Link>
         <div className="flex gap-6 text-white text-sm font-medium">
@@ -52,13 +46,7 @@ export default function Navbar() {
           md:hidden
         `}
       >
-        <Image
-          src="/LOGO.svg"
-          alt="Logo"
-          width={40} 
-          height={40}
-          priority
-        />
+        <Image src="/LOGO.svg" alt="Logo" width={40} height={40} priority />
       </Link>
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}

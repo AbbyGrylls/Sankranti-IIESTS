@@ -16,8 +16,8 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 export const metadata: Metadata = {
-  title: "Sankranthi-IIESTS",
-  description: "Website for Sankranthi celebrations at IIEST, Shibpur",
+  title: "Sankranti-IIESTS",
+  description: "Website for Sankranti celebrations at IIEST, Shibpur",
 };
 export default function RootLayout({
   children,
