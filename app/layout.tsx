@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "../components/navbar";
+import Footer from "@/components/footer";
 import { Cinzel, Montserrat } from "next/font/google";
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -15,8 +16,8 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 export const metadata: Metadata = {
-  title: "Sankranthi-IIESTS",
-  description: "Website for Sankranthi celebrations at IIEST, Shibpur",
+  title: "Sankranti-IIESTS",
+  description: "Website for Sankranti celebrations at IIEST, Shibpur",
 };
 export default function RootLayout({
   children,
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
