@@ -12,7 +12,7 @@ import { History } from "@/components/bhogi/History";
 import SankrantiPage from "@/components/sankranti/page";
 import DhotiMerchCard from "@/components/DhotiMerchCard";
 import RampWalkCard from "@/components/RampWalkCard";
-
+import Sparkles from "@/components/Sparkles";
 const greatVibes = Great_Vibes({ 
   subsets: ["latin"], 
   weight: "400",
@@ -154,7 +154,7 @@ export default function Page() {
 
   return (
     <>
-      <div className={`relative min-h-[120vh] overflow-hidden bg-gradient-to-t from-[#240000] via-[#5e0a0a] to-[#b88a30] ${greatVibes.variable} ${cinzel.variable}`}>
+      <div className={`relative min-h-[140vh] overflow-hidden bg-gradient-to-t from-[#240000] via-[#5e0a0a] to-[#b88a30] ${greatVibes.variable} ${cinzel.variable}`}>
 
         <div className="absolute top-0 md:top-[60px] left-0 w-full z-10 flex justify-center gap-0 pointer-events-none">
           <div className="flex w-full max-w-[1400px] justify-center">
@@ -239,15 +239,15 @@ export default function Page() {
             flex flex-col md:flex-row 
             items-center md:justify-between 
             gap-2 md:gap-0
-            mt-32 md:mt-12
+            mt-32 md:mt-12 z-50
             md:absolute md:bottom-10 md:left-1/2 md:-translate-x-1/2 md:px-10
             pointer-events-none
           ">
-            <div className="pointer-events-auto transform scale-90 md:scale-100">
+            <div className="pointer-events-auto z-10 transform scale-90 md:scale-100">
                <DhotiMerchCard />
             </div>
             
-            <div className="pointer-events-auto transform scale-90 md:scale-100">
+            <div className="pointer-events-auto z-10 transform scale-90 md:scale-100">
                <RampWalkCard />
             </div>
           </div>
@@ -267,12 +267,12 @@ export default function Page() {
         </motion.div>
       </div>
 
-      <motion.div style={{ y: yBhogi }} className="relative z-40">
-        <div className="w-full h-28 bg-gradient-to-b from-[#240000] to-black" />
+      <motion.div style={{ y: yBhogi }} className="relative z-0">
+        <Sparkles />
 
-        <main id="bhogi-section" className="bg-black text-white relative font-[family-name:var(--font-cinzel)]">
+        <main id="bhogi-section" className="bg-black z-0 text-white relative font-[family-name:var(--font-cinzel)]">
           <Hero />
-          <div className="bg-gradient-to-b from-black to-gray-950">
+          <div className="bg-gradient-to-b from-black z-0 to-gray-950">
             <AboutSection />
             <EventsSection />
             <History />
@@ -281,7 +281,8 @@ export default function Page() {
         </main>
       </motion.div>
 
-      <div id="sankranti-section">
+      <div id="sankranti-section" className="mt-[-150px]">
+        
         <SankrantiPage />
       </div>
     </>
@@ -291,7 +292,7 @@ export default function Page() {
 const NavButton = ({ children, onClick }: { children: React.ReactNode; onClick: () => void }) => (
   <button
     onClick={onClick}
-    className="
+    className=" 
       px-6 py-2 md:px-10 md:py-3
       min-w-[120px] md:min-w-[140px]
       bg-[#b88a30]/40 backdrop-blur-md
