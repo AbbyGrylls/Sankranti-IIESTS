@@ -51,8 +51,10 @@ const App: React.FC = () => {
     {
       year: "2023",
       photos: [
-        "/galleryphotos/2025/bhogi/DSC_0059.jpg",
-        "/galleryphotos/2023/sankranthi/framebird-converted2/img2.webp",
+        // "/galleryphotos/2025/bhogi/DSC_0059.webp",
+        "/galleryphotos/2023/bhogi/framebird-converted23/IMG_0638.webp",
+        "/galleryphotos/2023/sankranthi/framebird-converted2/IMG_2537.webp",
+        // "/galleryphotos/2023/sankranthi/framebird-converted2/img2.webp",
         "/galleryphotos/2025/sankranthi/DSC_0419.jpg",
         "/galleryphotos/2025/sankranthi/DSC_0419.jpg",
         "/galleryphotos/2025/sankranthi/DSC_0419.jpg",
