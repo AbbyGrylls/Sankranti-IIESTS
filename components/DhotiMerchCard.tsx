@@ -38,7 +38,7 @@ export default function DhotiMerchCard() {
               Selling Fast
             </span>
           </div>
-          <p className="text-gray-300 text-xs mt-1 leading-tight">
+          <p className="text-gray-300 text-xs mt-1 leading-tight min-h-[40px] flex items-center">
             Premium Traditional Dhoti Set for Sankranti.
           </p>
           <div className="mt-2 flex items-center gap-2 text-yellow-400 text-xs font-semibold group-hover:translate-x-1 transition-transform">

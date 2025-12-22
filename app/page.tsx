@@ -13,8 +13,9 @@ import SankrantiPage from "@/components/sankranti/page";
 import DhotiMerchCard from "@/components/DhotiMerchCard";
 import RampWalkCard from "@/components/RampWalkCard";
 import Sparkles from "@/components/Sparkles";
-const greatVibes = Great_Vibes({ 
-  subsets: ["latin"], 
+import FoodRegistrationCard from "@/components/FoodRegisCard";
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
   weight: "400",
   variable: "--font-great-vibes"
 });
@@ -86,13 +87,13 @@ const RotatingRangoli = () => {
         transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
         className="w-[350px] sm:w-[450px] md:w-[600px]"
       >
-        <img 
-            src="/decor/rangoli.webp" 
-            alt="Rangoli" 
-            className="w-full h-auto object-contain drop-shadow-[0_0_15px_rgba(251,191,36,0.3)]"
-            onError={(e) => {
-               e.currentTarget.style.display = 'none';
-            }}
+        <img
+          src="/decor/rangoli.webp"
+          alt="Rangoli"
+          className="w-full h-auto object-contain drop-shadow-[0_0_15px_rgba(251,191,36,0.3)]"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none';
+          }}
         />
       </motion.div>
     </div>
@@ -176,7 +177,7 @@ export default function Page() {
         </div>
 
         <FallingParticles />
-        
+
         {kiteConfig.map((kite, index) => (
           <Kite key={index} color={kite.color} className={kite.className} delay={kite.delay} />
         ))}
@@ -186,7 +187,7 @@ export default function Page() {
            pb-20"
         >
           <div className="relative flex flex-col items-center justify-center">
-            
+
             <RotatingRangoli />
             <div className="relative z-10 flex flex-col items-center gap-1 mt-10 md:gap-2">
               <motion.span
@@ -228,42 +229,46 @@ export default function Page() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="relative z-10 flex flex-wrap justify-center gap-6 md:gap-14 mt-8 md:mt-12 w-full"
+              className="relative z-10 flex flex-wrap justify-center gap-6 md:gap-14 mt-8 md:mt-4 w-full"
             >
               <NavButton onClick={() => scrollToSection("bhogi-section")}>Bhogi</NavButton>
               <NavButton onClick={() => scrollToSection("sankranti-section")}>Sankranti</NavButton>
             </motion.div>
           </div>
           <div className="
-            relative w-full max-w-7xl
+            relative w-full w-6xl 
             flex flex-col md:flex-row 
-            items-center md:justify-between 
-            gap-2 md:gap-0
-            mt-32 md:mt-12 z-50
-            md:absolute md:bottom-10 md:left-1/2 md:-translate-x-1/2 md:px-10
+            items-center md:justify-center 
+            gap-2 md:gap-20
+            mt-4 md:mt-15 z-50
+            md:absolute md:bottom-8 md:left-1/2 md:-translate-x-1/2 md:px-10
             pointer-events-none
           ">
             <div className="pointer-events-auto z-10 transform scale-90 md:scale-100">
-               <DhotiMerchCard />
+              <DhotiMerchCard />
             </div>
-            
+
+            <div className="pointer-events-auto z-10 transform scale-90 md:scale-80">
+              <FoodRegistrationCard />
+            </div>
+
             <div className="pointer-events-auto z-10 transform scale-90 md:scale-100">
-               <RampWalkCard />
+              <RampWalkCard />
             </div>
           </div>
-        <motion.div
-          onClick={() => scrollToSection("bhogi-section")}
-          animate={{ y: [0, 15, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="
+          <motion.div
+            onClick={() => scrollToSection("bhogi-section")}
+            animate={{ y: [0, 15, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            className="
             absolute bottom-2 left-1/2 -translate-x-1/2 
             text-yellow-200/80 hover:text-yellow-100
             cursor-pointer z-50 p-4
             hidden md:block
           "
-        >
-          <ChevronDown size={48} />
-        </motion.div>
+          >
+            <ChevronDown size={48} />
+          </motion.div>
         </motion.div>
       </div>
 
@@ -282,7 +287,7 @@ export default function Page() {
       </motion.div>
 
       <div id="sankranti-section" className="mt-[-150px]">
-        
+
         <SankrantiPage />
       </div>
     </>
@@ -294,7 +299,7 @@ const NavButton = ({ children, onClick }: { children: React.ReactNode; onClick: 
     onClick={onClick}
     className=" 
       px-6 py-2 md:px-10 md:py-3
-      min-w-[120px] md:min-w-[140px]
+      w-[130px] md:w-[160px]
       bg-[#b88a30]/40 backdrop-blur-md
       text-yellow-200
       font-[family-name:var(--font-cinzel)]
@@ -305,6 +310,7 @@ const NavButton = ({ children, onClick }: { children: React.ReactNode; onClick: 
       active:scale-95
       transition-all duration-300
       tracking-widest uppercase text-sm md:text-base font-semibold
+      flex justify-center items-center
     "
   >
     {children}
