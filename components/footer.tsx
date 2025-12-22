@@ -208,14 +208,6 @@ export default function Footer() {
                   Gallery
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/sankranti"
-                  className="hover:text-yellow-300 transition-colors"
-                >
-                  Sankranti
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -239,6 +231,14 @@ export default function Footer() {
                   className="hover:text-yellow-300 transition-colors"
                 >
                   Rampwalk Show
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/food"
+                  className="hover:text-yellow-300 transition-colors"
+                >
+                  Lunch Registration
                 </Link>
               </li>
             </ul>

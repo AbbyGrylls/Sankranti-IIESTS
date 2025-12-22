@@ -10,21 +10,21 @@ const castoro = Castoro_Titling({
 const events = [
   {
     title: "Bhogi Fire Lightening",
-    date: "January 10, 2026 • 5:00 AM",
+    date: "January 10, 2026 • 4:30 AM",
     description:
       "Early morning Bhogi fire lighting ceremony symbolizing warmth, positivity, and new beginnings.",
+  },
+  {
+    title: "DJ Celebration",
+    date: "January 10, 2026 • 6:00 AM",
+    description:
+      "Enjoy energetic beats and dance with friends to kickstart the festive morning.",
   },
   {
     title: "Photoshoot Session",
     date: "January 10, 2026 • 7:00 AM",
     description:
       "Capture the festive vibes with traditional attire, rangoli backgrounds, and group photos.",
-  },
-  {
-    title: "DJ Celebration",
-    date: "January 10, 2026 • 8:00 AM",
-    description:
-      "Enjoy energetic beats and dance with friends to kickstart the festive morning.",
   },
 ];
 

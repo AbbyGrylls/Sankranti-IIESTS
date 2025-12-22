@@ -30,7 +30,7 @@ export default function HeroSection() {
         >
           BHOGI
         </h1>
-        <p className="mt-4 max-w-2xl text-lg md:text-xl text-gray-200 text-[#c2beb8]">
+        <p className="mt-4 max-w-2xl text-lg md:text-xl text-gray-200 ">
           A celebration of new beginnings, warmth, and togetherness.
           <br /> Let go of the old and welcome the light of the new.
         </p>
